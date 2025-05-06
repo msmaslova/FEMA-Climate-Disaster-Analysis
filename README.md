@@ -1,48 +1,34 @@
-# 🌪️ FEMA Climate Disaster Analysis
+# 🌪 FEMA Climate Disaster Risk Prediction
 
-This project explores the frequency and impact of climate-related disasters across the United States using the publicly available FEMA Disaster Declarations dataset. It also demonstrates how to visualize disaster patterns by state and year, and compares them with a social vulnerability index to evaluate regional resilience.
+This project analyzes FEMA disaster declarations alongside drought levels and social vulnerability indices (SVI) to build a machine learning model predicting the likelihood of wildfire events in US states.
 
----
+## 📊 Data Sources
+- **FEMA Disaster Declarations**: Official disaster reports by state and year.
+- **CDC Social Vulnerability Index (SVI)**: Measures the resilience of communities.
+- **U.S. Drought Monitor**: Historical drought severity by state and year.
 
-## 📊 Project Objectives
+## 🔧 Features Used
+- `SVI`: Social vulnerability index by state.
+- `Year`: Declaration year.
+- `AvgDroughtLevel`: Weighted average drought level by state and year.
 
-- Identify which U.S. states are most frequently affected by hurricanes, wildfires, droughts, and storms
-- Visualize the distribution of disaster types by state using heatmaps
-- Analyze trends over time (year-by-year disaster frequency)
-- Compare disaster frequency with vulnerability index to assess climate resilience
+## 🤖 Model
+A `RandomForestClassifier` is trained to classify whether a wildfire occurred (`is_fire = 1`) using climate and socioeconomic indicators.
 
----
+### Model Performance:
+- **Accuracy**: ~85%
+- **F1-score (Fire)**: 0.61
+- **Precision (Fire)**: 0.67
+- **Recall (Fire)**: 0.55
 
-## 🗂️ Data Sources
+### ✅ Model Summary & Key Insights
 
-- **FEMA Disaster Declarations Summary**  
-  https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries.csv  
-  (includes type of disaster, state, date, and more)
+The model accurately identifies **85%** of all disaster events overall.  
+It shows **strong predictive power for non-wildfire years**, and **increasing performance** in detecting wildfires.
 
-- **CDC Social Vulnerability Index **  
-  https://www.atsdr.cdc.gov/placeandhealth/svi/index.html
-
----
-
-## 🐍 Tools Used
-
-- **Python 3**
-- Libraries: `pandas`, `matplotlib`, `seaborn`
-- Tableau Public for advanced dashboard
-
----
-
-## 🚀 How to Use
-
-1. Clone the repository
-2. Run the Jupyter Notebook: `FEMA_Climate_Disaster_Analysis.ipynb`
-3. All charts will be generated automatically:
-   - Top disaster types in the US
-   - Heatmap: disaster types per state
-   - Time-series plot: disasters per year
-   - Vulnerability vs disaster frequency (scatter)
-
----
+- **Drought level** and **SVI** (Social Vulnerability Index) both contribute significantly to wildfire prediction.
+- **Precision for wildfires is 67%**, meaning when the model predicts a wildfire, it is correct two out of three times.
+- **Recall is 55%**, indicating that the model successfully detects **over half of all real wildfire events** — a promising foundation for early warning and preparedness systems.
 
 ## 🖼️ Sample Visuals
 
@@ -58,13 +44,16 @@ This project explores the frequency and impact of climate-related disasters acro
 ### 🔍 Scatter: Disaster Frequency vs Vulnerability Index
 ![Scatter Plot](images/vulnerability_scatter.png)
 
----
+## 📁 Files
+- `FEMA_Model_With_Scatter.ipynb`: Final notebook with data processing, modeling, and visualizations.
+- `SVI_2020_US_county.csv`: Social Vulnerability raw data.
+- `dm_export_20000101_20231231.csv`: Drought Monitor historical data.
 
-## 📄 Output Files
+## 🚀 How to Run
+1. Install dependencies:
+```bash
+pip install pandas matplotlib seaborn scikit-learn
 
-- `fema_cleaned_data.csv`: cleaned dataset
-- `fema_disaster_state_totals.csv`: total number of disasters per state
-- `fema_disaster_heatmap_data.csv`: pivot table for heatmap
 
 ---
 ## 📃 License
