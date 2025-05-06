@@ -53,7 +53,7 @@ It shows **strong predictive power for non-wildfire years**, and **increasing pe
 1. Install dependencies:
 ```bash
 pip install pandas matplotlib seaborn scikit-learn
-
+```
 
 ---
 ## 📃 License
