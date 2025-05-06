@@ -7,6 +7,15 @@ This project analyzes FEMA disaster declarations alongside drought levels and so
 - **CDC Social Vulnerability Index (SVI)**: Measures the resilience of communities.
 - **U.S. Drought Monitor**: Historical drought severity by state and year.
 
+## 🛠 Tech Stack
+
+- **Python 3.9** 
+- **Pandas** — for tables
+- **NumPy** — for numbers
+- **Matplotlib & Seaborn** — for plots
+- **Scikit-learn** — for models
+- **Jupyter Notebook** 
+
 ## 🔧 Features Used
 - `SVI`: Social vulnerability index by state.
 - `Year`: Declaration year.
