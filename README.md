@@ -58,7 +58,7 @@ It shows **strong predictive power for non-wildfire years**, and **increasing pe
 - `SVI_2020_US_county.csv`: Social Vulnerability raw data.
 - `dm_export_20000101_20231231.csv`: Drought Monitor historical data.
 
-## 🚀 How to Run
+## 🚀 Libraries
 1. Install dependencies:
 ```bash
 pip install pandas matplotlib seaborn scikit-learn
